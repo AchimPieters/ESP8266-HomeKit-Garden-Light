@@ -5,9 +5,9 @@ EXTRA_COMPONENTS = \
 	extras/i2s_dma \
 	extras/ws2812_i2s \
 	extras/dhcpserver \
-  $(abspath ../../components/esp-8266/wifi_config) \
+  $(abspath ../../components/esp8266-open-rtos/wifi_config) \
 	$(abspath ../../components/common/wolfssl) \
-	$(abspath ../../components/common/cJSON) \
+	$(abspath ../../components/esp8266-open-rtos/cJSON) \
 	$(abspath ../../components/common/homekit)
 
 FLASH_SIZE ?= 32
