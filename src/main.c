@@ -332,7 +332,7 @@ homekit_accessory_t *accessories[] = {
 
 homekit_server_config_t config = {
         .accessories = accessories,
-        .password = "221-11-327",
+        .password = "221-01-327",
         .setupId="1GL0",
 };
 
