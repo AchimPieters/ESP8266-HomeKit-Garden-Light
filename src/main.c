@@ -268,19 +268,26 @@ void button_callback(button_event_t event, void* context) {
                 break;
         case button_event_long_press:
                 printf("long press\n");
+                reset_configuration();
                 break;
         }
 }
 
 //end relay
 
+#define DEVICE_NAME "Garden Light"
+#define DEVICE_MANUFACTURER "StudioPieters®"
+#define DEVICE_SERIAL "C40LDDQRERD"
+#define DEVICE_MODEL "HKSP1GL/N"
+#define FW_VERSION "0.0.2"
+
 // Add These lines
 homekit_characteristic_t ota_trigger = API_OTA_TRIGGER;
-homekit_characteristic_t name = HOMEKIT_CHARACTERISTIC_(NAME, "Garden Light");
-homekit_characteristic_t manufacturer = HOMEKIT_CHARACTERISTIC_(MANUFACTURER, "StudioPieters®");
-homekit_characteristic_t serial = HOMEKIT_CHARACTERISTIC_(SERIAL_NUMBER, "C39LDDQZFFD");
-homekit_characteristic_t model = HOMEKIT_CHARACTERISTIC_(MODEL, "HKSP1GL/N");
-homekit_characteristic_t revision = HOMEKIT_CHARACTERISTIC_(FIRMWARE_REVISION, "0.0.1");
+homekit_characteristic_t name         = HOMEKIT_CHARACTERISTIC_(NAME, DEVICE_NAME);
+homekit_characteristic_t manufacturer = HOMEKIT_CHARACTERISTIC_(MANUFACTURER,  DEVICE_MANUFACTURER);
+homekit_characteristic_t serial       = HOMEKIT_CHARACTERISTIC_(SERIAL_NUMBER, DEVICE_SERIAL);
+homekit_characteristic_t model        = HOMEKIT_CHARACTERISTIC_(MODEL, DEVICE_MODEL);
+homekit_characteristic_t revision     = HOMEKIT_CHARACTERISTIC_(FIRMWARE_REVISION,  FW_VERSION);
 
 
 homekit_accessory_t *accessories[] = {
